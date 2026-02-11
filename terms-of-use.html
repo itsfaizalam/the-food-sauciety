@@ -4,303 +4,242 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - The Food Sauciety</title>
+    <title>Terms Of Use - The Food Sauciety</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="bg-[#fdecec]">
-<!-- Navbar -->
-<header class="bg-[#fdecec] px-4 py-4">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Navbar -->
+    <header class="bg-[#fdecec] px-4 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
 
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <img src="images/logo-tfs.svg" alt="The Food Sauciety" class="h-12" />
-    </div>
-
-    <!-- Desktop Menu -->
-    <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-      <a href="#features" class="hover:text-gray-900">Features</a>
-      <a href="#how-it-works" class="hover:text-gray-900">How It Works</a>
-      <a href="#about" class="hover:text-gray-900">About</a>
-      <a href="#contact" class="hover:text-gray-900">Contact</a>
-    </nav>
-
-    <!-- CTA Button -->
-    <div class="hidden md:block">
-      <a
-        href="#"
-        class="px-6 py-3 bg-red-500 text-white rounded-full font-medium hover:bg-red-600 transition"
-      >
-        Get The App
-      </a>
-    </div>
-
-    <!-- Mobile Menu Button -->
-    <button
-      id="menuBtn"
-      class="md:hidden text-gray-800 focus:outline-none"
-    >
-      ☰
-    </button>
-
-  </div>
-
-  <!-- Mobile Menu -->
-  <div
-    id="mobileMenu"
-    class="hidden md:hidden bg-[#fdecec] px-4 pt-4 pb-6"
-  >
-    <nav class="flex flex-col gap-4 text-gray-700 font-medium">
-      <a href="#features">Features</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-
-      <a
-        href="#"
-        class="mt-4 inline-block px-6 py-3 bg-red-500 text-white rounded-full text-center"
-      >
-        Get The App
-      </a>
-    </nav>
-  </div>
-</header>
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-  });
-</script>
-
-
-
-
-    <!-- Hero Section -->
-    <section class="px-4 py-16">
-        <div class="max-w-6xl mx-auto text-center">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-1 px-6 py-2 mb-6 
-                bg-white rounded-full 
-                shadow-[0_10px_25px_rgba(0,0,0,0.08)]">
-
-                <span class="text-red-500 font-semibold">
-                    50M+ Downloads
-                </span>
-                <span class="text-gray-600">
-                    with serving
-                </span>
-                <span class="text-red-500 font-semibold">
-                    25K+ places
-                </span>
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+                <img src="images/logo-tfs.svg" alt="The Food Sauciety" class="h-12" />
             </div>
 
-            <!-- Heading -->
-            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Savor Local Food.<br />
-                Support Local Cooks.
-            </h1>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+                <a href="#features" class="hover:text-gray-900">Features</a>
+                <a href="#how-it-works" class="hover:text-gray-900">How It Works</a>
+                <a href="#about" class="hover:text-gray-900">About</a>
+                <a href="#contact" class="hover:text-gray-900">Contact</a>
+            </nav>
 
-            <!-- Subtext -->
-            <p class="mt-4 max-w-2xl mx-auto text-gray-600 text-base md:text-lg">
-                Discover fresh dishes delivered fast in community-driven food marketplace,
-                or grow your food business with a vendor app built to scale.
-            </p>
-
-            <!-- Buttons -->
-            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
+            <!-- CTA Button -->
+            <div class="hidden md:block">
                 <a href="#"
-                    class="px-6 py-3 text-white bg-red-500 hover:bg-red-600 rounded-full font-medium transition">
+                    class="px-6 py-3 bg-red-500 text-white rounded-full font-medium hover:bg-red-600 transition">
                     Get The App
                 </a>
-                <a href="#"
-                    class="px-6 py-3 text-red-500 border border-red-500 hover:bg-red-50 rounded-full font-medium transition">
-                    Join As Vendor
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
+                ☰
+            </button>
+
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#fdecec] px-4 pt-4 pb-6">
+            <nav class="flex flex-col gap-4 text-gray-700 font-medium">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+
+                <a href="#" class="mt-4 inline-block px-6 py-3 bg-red-500 text-white rounded-full text-center">
+                    Get The App
                 </a>
-            </div>
-
-            <!-- App Image with Overlay -->
-            <div class="mt-8 flex justify-center">
-                <div class="relative w-80 sm:w-96 md:w-[28rem] lg:w-[32rem]">
-                    <!-- Image -->
-                    <img src="images/home-hero.png" alt="Food App Preview" class="w-full block" />
-                    <!-- Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#FDECEC] pointer-events-none">
-                    </div>
-                </div>
-            </div>
-
+            </nav>
         </div>
-    </section>
+    </header>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
 
-    <!-- Features for Users -->
-    <section class="px-4 py-20 bg-[#fdecec]">
-        <div class="max-w-6xl mx-auto">
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
 
-            <!-- Header -->
+    <!-- Terms Of Use Section -->
+    <section class="px-4 py-20">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Page Title -->
             <div class="text-center mb-12">
-                <span class="text-xs font-semibold text-red-500 uppercase tracking-wider">
-                    Features for Users
-                </span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
-                    For Food Lovers
-                </h2>
-                <p class="mt-3 text-gray-600 max-w-xl mx-auto">
-                    Discover fresh food, local flavors, and order with The Food Sauciety!
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                    Terms Of Use
+                </h1>
+
+            </div>
+
+            <div class="text-left mb-12">
+                <p class="mt-3 text-gray-600 text-sm">
+                    Updated on Jan 1, 2026
                 </p>
             </div>
 
-            <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-                <!-- CARD 1 : FINAL (UNCHANGED) -->
-                <div class="relative md:col-span-2 bg-[#fff7f8] rounded-2xl p-6 overflow-hidden min-h-[260px]">
-                    <div class="relative z-20 max-w-sm">
-                        <h3 class="font-semibold text-gray-900 mb-2">Discover Local Flavors</h3>
-                        <p class="text-sm text-gray-600 mb-4">
-                            Curated menus and personalized recommendations.
-                        </p>
-                        <a href="#" class="inline-block px-4 py-2 text-sm bg-red-500 text-white rounded-full">
-                            Get The App
-                        </a>
-                    </div>
-
-                    <img src="images/tfs-home-sec-2-F1.png"
-                        class="absolute right-[40px] sm:bottom-6 md:bottom-[-20px] sm:w-[2rem] md:w-[30rem] z-10 pointer-events-none" />
-                </div>
-
-                <!-- CARD 2 -->
-                <div class="relative bg-[#fff7f8] rounded-2xl p-6 overflow-hidden min-h-[260px]">
-                    <div class="relative z-20 max-w-sm">
-                        <h3 class="font-semibold text-gray-900 mb-2">VIP Card & Offers</h3>
-                        <p class="text-sm text-gray-600">
-                            Schedule orders, contactless delivery, or quick pickup.
-                        </p>
-                    </div>
-
-                    <img src="images/tfs-home-sec-2-F2.png"
-                        class="absolute right-[-20px] bottom-[-10px] w-[18rem] z-10 pointer-events-none" />
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="relative bg-[#fff7f8] rounded-2xl p-6 overflow-hidden min-h-[260px]">
-                    <div class="relative z-20 max-w-sm">
-                        <h3 class="font-semibold text-gray-900 mb-2">Loyalty Card Rewards</h3>
-                        <p class="text-sm text-gray-600">
-                            Earn points and redeem them into rewards.
-                        </p>
-                    </div>
-
-                    <img src="images/tfs-home-sec-2-F3.png"
-                        class="absolute right-[25px] sm:bottom-[20px] md:bottom-[40px] w-1/1 z-10 pointer-events-none" />
-                </div>
-
-                <!-- CARD 4 -->
-                <div class="relative md:col-span-2 bg-[#fff7f8] rounded-2xl p-6 overflow-hidden min-h-[220px]">
-                    <div class="relative z-20 max-w-sm">
-                        <h3 class="font-semibold text-gray-900 mb-2">Plan In Groups</h3>
-                        <p class="text-sm text-gray-600">
-                            Order and share with your friends and plan dining together.
-                        </p>
-                    </div>
-
-                    <!-- Images Row -->
-                    <div class="flex gap-4 mb-4">
-                        <img src="images/tfs-home-sec-2-F4.1.png" class="w-2/3 rounded-xl" alt="" />
-                        <img src="images/tfs-home-sec-2-F4.2.png" class="w-1/3 rounded-xl" alt="" />
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Features for Vendors -->
-    <section class="px-4 py-20 bg-[#fdecec]">
-        <div class="max-w-6xl mx-auto">
-
-            <!-- Header -->
-            <div class="text-center mb-12">
-                <span class="text-xs font-semibold text-red-500 uppercase tracking-wider">
-                    Features for Vendors
-                </span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-bold text-gray-900">
-                    For Chefs And Sellers
-                </h2>
-                <p class="mt-3 text-gray-600 max-w-xl mx-auto">
-                    Reach more customers, manage orders, increase revenue.
+            <!-- Content Box -->
+            <div class="space-y-6 leading-relaxed text-gray-700">
+                <p>
+                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
+                    application.
                 </p>
-            </div>
 
-            <!-- Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <p>
+                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
+                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
+                    this page.
+                </p>
 
-                <!-- CARD 1 : EASY ONBOARDING (TALL) -->
-                <div class="md:row-span-2 bg-[#fff7f8] rounded-2xl p-6">
-                    <!-- Image -->
-                    <img src="images/tfs-home-sec-3-F1.png" class="w-full mb-4 rounded-xl" alt="" />
+                <p>
+                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
+                    coupons and discounts from participating restaurants and establishments.
+                </p>
 
-                    <!-- Content -->
-                    <h3 class="font-semibold text-gray-900 mb-2 sm:mt-[50px] md:mt-[180px]">
-                        Easy Onboarding
-                    </h3>
-                    <p class="text-sm text-gray-600 mb-4">
-                        Quickly setup by just adding your menu, photos and availability.
-                    </p>
+                <p>
+                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
+                </p>
 
-                    <a href="#" class="inline-block px-4 py-2 text-sm bg-red-500 text-white rounded-full">
-                        Become A Partner
-                    </a>
-                </div>
+                <p>
+                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
+                    to accept responsibility for all activities that occur under their account.
+                </p>
 
-                <!-- CARD 2 : MENU SETUP -->
-                <div class="bg-[#fff7f8] rounded-2xl p-6">
-                    <!-- Image -->
-                    <img src="images/tfs-home-sec-3-F2.png" class="w-full mb-4 rounded-xl" alt="" />
+                <p>
+                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
+                    expiration dates and usage restrictions.
+                </p>
 
-                    <!-- Content -->
-                    <h3 class="font-semibold text-gray-900 mb-2">
-                        Menu Setup
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Setup and edit categorized menus, easy to setup and manage.
-                    </p>
-                </div>
+                <p>
+                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
+                    discounts or special offers.
+                </p>
 
-                <!-- CARD 3 : COUPONS -->
-                <div class="bg-[#fff7f8] rounded-2xl p-6">
-                    <!-- Image -->
-                    <img src="images/tfs-home-sec-3-F3.png" class="w-full mb-4 rounded-xl" alt="" />
+                <p>
+                    Coupons cannot be combined with other promotions, unless otherwise specified.
+                </p>
+                `
+                <br>
+                <p>
+                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
+                    application.
+                </p>
 
-                    <!-- Content -->
-                    <h3 class="font-semibold text-gray-900 mb-2">
-                        Coupons & Notifications
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Create and manage custom notifications and coupons and schedule it.
-                    </p>
-                </div>
+                <p>
+                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
+                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
+                    this page.
+                </p>
 
-                <!-- CARD 4 : BUSINESS INSIGHTS (WIDE + 2 IMAGES ON TOP) -->
-                <div class="md:col-span-2 bg-[#fff7f8] rounded-2xl p-6">
+                <p>
+                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
+                    coupons and discounts from participating restaurants and establishments.
+                </p>
 
-                    <!-- Images Row -->
-                    <div class="flex gap-4 mb-4">
-                        <img src="images/tfs-home-sec-3-F4.1.png" class="w-2/3 rounded-xl" alt="" />
-                        <img src="images/tfs-home-sec-3-F4.2.png" class="w-1/3 rounded-xl" alt="" />
-                    </div>
+                <p>
+                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
+                </p>
 
-                    <!-- Content -->
-                    <h3 class="font-semibold text-gray-900 mb-2">
-                        Business Insights & Growth Tools
-                    </h3>
-                    <p class="text-sm text-gray-600">
-                        Operations analysis and tools to support the growth of the business.
-                    </p>
-                </div>
+                <p>
+                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
+                    to accept responsibility for all activities that occur under their account.
+                </p>
 
+                <p>
+                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
+                    expiration dates and usage restrictions.
+                </p>
+
+                <p>
+                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
+                    discounts or special offers.
+                </p>
+
+                <p>
+                    Coupons cannot be combined with other promotions, unless otherwise specified.
+                </p>
+                <br>
+                <p>
+                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
+                    application.
+                </p>
+
+                <p>
+                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
+                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
+                    this page.
+                </p>
+
+                <p>
+                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
+                    coupons and discounts from participating restaurants and establishments.
+                </p>
+
+                <p>
+                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
+                </p>
+
+                <p>
+                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
+                    to accept responsibility for all activities that occur under their account.
+                </p>
+
+                <p>
+                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
+                    expiration dates and usage restrictions.
+                </p>
+
+                <p>
+                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
+                    discounts or special offers.
+                </p>
+
+                <p>
+                    Coupons cannot be combined with other promotions, unless otherwise specified.
+                </p>
+                <br>
+                <p>
+                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
+                    application.
+                </p>
+
+                <p>
+                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
+                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
+                    this page.
+                </p>
+
+                <p>
+                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
+                    coupons and discounts from participating restaurants and establishments.
+                </p>
+
+                <p>
+                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
+                </p>
+
+                <p>
+                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
+                    to accept responsibility for all activities that occur under their account.
+                </p>
+
+                <p>
+                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
+                    expiration dates and usage restrictions.
+                </p>
+
+                <p>
+                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
+                    discounts or special offers.
+                </p>
+
+                <p>
+                    Coupons cannot be combined with other promotions, unless otherwise specified.
+                </p>
             </div>
         </div>
     </section>
@@ -736,6 +675,7 @@
 
         </div>
     </footer>
+
 </body>
 
 
