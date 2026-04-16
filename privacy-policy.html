@@ -10,23 +10,24 @@
 
 <body class="bg-[#fdecec]">
     <!-- Navbar -->
-    <header class="bg-[#fdecec] px-4 py-4">
+    <header class="sticky top-0 z-50 bg-[#fdecec] px-4 py-4 shadow-sm">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
 
             <!-- Logo -->
-            <div class="flex items-center gap-2">
-                <img src="images/logo-tfs.svg" alt="The Food Sauciety" class="h-12" />
+            <div>
+                <a href="/home"><img src="images/logo-tfs.svg" alt="The Food Sauciety"
+                        class="h-12" /></a>
             </div>
 
             <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-                <a href="#features" class="hover:text-gray-900">Features</a>
-                <a href="#how-it-works" class="hover:text-gray-900">How It Works</a>
-                <a href="#about" class="hover:text-gray-900">About</a>
-                <a href="#contact" class="hover:text-gray-900">Contact</a>
+                <a href="/features" class="hover:text-gray-900">Features</a>
+                <a href="/how-it-works" class="hover:text-gray-900">How It Works</a>
+                <a href="/about" class="hover:text-gray-900">About</a>
+                <a href="/contact" class="hover:text-gray-900">Contact</a>
             </nav>
 
-            <!-- CTA Button -->
+            <!-- Desktop CTA -->
             <div class="hidden md:block">
                 <a href="#"
                     class="px-6 py-3 bg-red-500 text-white rounded-full font-medium hover:bg-red-600 transition">
@@ -34,223 +35,230 @@
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="menuBtn" class="md:hidden text-gray-800 focus:outline-none">
-                ☰
+            <!-- Mobile Hamburger -->
+            <button id="menuBtn" class="md:hidden relative w-8 h-8 flex flex-col justify-between">
+                <span class="bar block h-0.5 w-8 bg-gray-800 transition-all duration-300"></span>
+                <span class="bar block h-0.5 w-8 bg-gray-800 transition-all duration-300"></span>
+                <span class="bar block h-0.5 w-8 bg-gray-800 transition-all duration-300"></span>
             </button>
 
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-[#fdecec] px-4 pt-4 pb-6">
-            <nav class="flex flex-col gap-4 text-gray-700 font-medium">
-                <a href="#features">Features</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-
-                <a href="#" class="mt-4 inline-block px-6 py-3 bg-red-500 text-white rounded-full text-center">
-                    Get The App
-                </a>
-            </nav>
-        </div>
     </header>
+
+    <!-- Mobile Slide Menu -->
+    <div id="mobileMenu"
+        class="fixed top-0 left-0 h-full w-64 bg-[#fdecec] shadow-lg transform -translate-x-full transition-transform duration-300 ease-in-out z-40 p-6">
+
+        <nav class="flex flex-col gap-6 mt-16 text-gray-700 font-medium">
+            <a href="/features">Features</a>
+            <a href="/how-it-works">How It Works</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+
+            <a href="#" class="mt-6 inline-block px-6 py-3 bg-red-500 text-white rounded-full text-center">
+                Get The App
+            </a>
+        </nav>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-40 hidden z-30">
+    </div>
+
+
     <script>
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
+        const overlay = document.getElementById("overlay");
+        const bars = document.querySelectorAll(".bar");
 
         menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("-translate-x-full");
+            overlay.classList.toggle("hidden");
+
+            // Animate hamburger
+            bars[0].classList.toggle("rotate-45");
+            bars[0].classList.toggle("translate-y-3");
+
+            bars[1].classList.toggle("opacity-0");
+
+            bars[2].classList.toggle("-rotate-45");
+            bars[2].classList.toggle("-translate-y-3");
+        });
+
+        // Close when overlay clicked
+        overlay.addEventListener("click", () => {
+            mobileMenu.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+
+            bars[0].classList.remove("rotate-45", "translate-y-3");
+            bars[1].classList.remove("opacity-0");
+            bars[2].classList.remove("-rotate-45", "-translate-y-3");
         });
     </script>
 
+
     <!-- Privacy Policy Section -->
     <section class="px-4 py-20">
-        <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto">
 
-            <!-- Page Title -->
-            <div class="text-center mb-12">
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
-                    Privacy Policy
-                </h1>
-                
-            </div>
+        <!-- Page Title -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Privacy Policy
+            </h1>
+            
+        </div>
 
-            <div class="text-left mb-12">                
-                <p class="mt-3 text-gray-600 text-sm">
-                    Updated on Jan 1, 2026
-                </p>
-            </div>
+        <div class="text-left mb-12">                
+            <p class="mt-3 text-gray-600 text-sm">
+                Updated on Jan 1, 2026
+            </p>
+        </div>
 
-            <!-- Content Box -->
-            <div class="space-y-6 leading-relaxed text-gray-700">
+        <!-- Content -->
+        <div class="space-y-8 text-gray-700 leading-relaxed">
 
-                <p>
-                    These terms and conditions outline the rules and regulations for the use of the
-                    <strong>The Food Sauciety</strong> mobile application.
-                </p>
+        <p>
+            Food Sauciety (we, our, us) respects your privacy and is committed to protecting your personal data.
+        </p>
 
-                <p>
-                    By accessing this mobile application, we assume you accept these terms and conditions.
-                    Do not continue to use The Food Sauciety if you do not agree to all of the terms and
-                    conditions stated on this page.
-                </p>
+        <p>
+            This privacy notice aims to give you information on how we collect and process your personal data when you use our mobile applications, use our services, or otherwise interact with us.
+        </p>
 
-                <p>
-                    The Food Sauciety mobile application is designed to provide users with access to exclusive
-                    food coupons and discounts from participating restaurants and establishments.
-                </p>
+        <p>
+            Our apps are not intended for children, and we do not knowingly collect data relating to children.
+        </p>
 
-                <p>
-                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
-                </p>
+        <p>
+            This privacy notice should be read together with any additional notices provided when we collect or process your personal data.
+        </p>
 
-                <p>
-                    Users are responsible for maintaining the confidentiality of their account and password.
-                    Users agree to accept responsibility for all activities that occur under their account.
-                </p>
+        <!-- Controller -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Controller</h2>
+            <p>
+            Food Sauciety is the controller responsible for your personal data.
+            </p>
+        </div>
 
-                <p>
-                    Coupons and discounts offered through The Food Sauciety are subject to availability and
-                    may have expiration dates and usage restrictions.
-                </p>
+        <!-- DPO -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Data Protection Officer</h2>
+            <p>
+            We have appointed a Data Protection Officer (DPO). For any privacy-related queries or requests, contact:
+            </p>
+            <p class="mt-2 font-medium">
+            Food Sauciety<br>
+            (Contact info goes here)
+            </p>
+        </div>
 
-                <p>
-                    Users must present valid coupons to participating restaurants at the time of purchase
-                    to redeem discounts or special offers.
-                </p>
+        <p>
+            You have the right to make a complaint at any time to the Information Commissioner's Office (ICO). However, we request that you contact us first to resolve your concerns.
+        </p>
 
-                <p>
-                    Coupons cannot be combined with other promotions, unless otherwise specified.
-                </p>
+        <p>
+            We keep this policy under regular review. Last updated: [insert date].
+        </p>
 
-                <br>
+        <p>
+            Please ensure your personal data is accurate and up to date.
+        </p>
 
-                <p>
-                    These terms and conditions outline the rules and regulations for the use of the The Food Sauciety
-                    mobile application.
-                </p>
+        <p>
+            Our apps may include links to third-party services. We are not responsible for their privacy practices.
+        </p>
 
-                <p>
-                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
-                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
-                    this page.
-                </p>
+        <!-- Information We Collect -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Information We Collect</h2>
+            <ul class="list-disc pl-5 space-y-2">
+            <li>Full name, email address, employer, position</li>
+            <li>Gender, date of birth</li>
+            <li>Financial and transaction data</li>
+            <li>Phone number, address, country</li>
+            <li>ID or employment proof documents</li>
+            <li>Technical data (IP, browser, device, location)</li>
+            <li>Login credentials and account details</li>
+            <li>Member IDs, voucher codes, QR codes</li>
+            <li>Preferences, usage data, and feedback</li>
+            <li>Offer interaction and redemption data</li>
+            </ul>
+        </div>
 
-                <p>
-                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
-                    coupons and discounts from participating restaurants and establishments.
-                </p>
+        <p>
+            We may also use aggregated data for analytics and business insights. If combined with personal data, it will be treated accordingly.
+        </p>
 
-                <p>
-                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
-                </p>
+        <p>
+            If you do not provide required data, we may not be able to provide our services.
+        </p>
 
-                <p>
-                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
-                    to accept responsibility for all activities that occur under their account.
-                </p>
+        <!-- How We Collect -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">How We Collect Data</h2>
+            <ul class="list-disc pl-5 space-y-2">
+            <li>Direct interactions (account creation, forms, communication)</li>
+            <li>Automated tracking (cookies, logs, analytics tools)</li>
+            </ul>
+        </div>
 
-                <p>
-                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
-                    expiration dates and usage restrictions.
-                </p>
+        <!-- Marketing -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Marketing</h2>
+            <p>
+            We may use your data to send relevant offers. You can opt out anytime via settings or by contacting us.
+            </p>
+        </div>
 
-                <p>
-                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
-                    discounts or special offers.
-                </p>
+        <!-- Data Sharing -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Data Sharing</h2>
+            <ul class="list-disc pl-5 space-y-2">
+            <li>Hosting, CRM, analytics, and support providers</li>
+            <li>Payment processors (e.g., Stripe, PayPal, Apple Pay, Google Pay)</li>
+            <li>Logistics, fraud prevention, and survey tools</li>
+            <li>Professional advisors and legal authorities</li>
+            </ul>
+        </div>
 
-                <p>
-                    Coupons cannot be combined with other promotions, unless otherwise specified.
-                </p>
+        <!-- International Transfers -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Data Processing Outside the UK</h2>
+            <p>
+            We ensure adequate safeguards when transferring personal data outside the UK.
+            </p>
+        </div>
 
-                <br>
+        <!-- Retention -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Data Retention</h2>
+            <p>
+            We retain data only as long as necessary for legal and business purposes.
+            </p>
+        </div>
 
-                <p>
-                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
-                    application.
-                </p>
-
-                <p>
-                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
-                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
-                    this page.
-                </p>
-
-                <p>
-                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
-                    coupons and discounts from participating restaurants and establishments.
-                </p>
-
-                <p>
-                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
-                </p>
-
-                <p>
-                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
-                    to accept responsibility for all activities that occur under their account.
-                </p>
-
-                <p>
-                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
-                    expiration dates and usage restrictions.
-                </p>
-
-                <p>
-                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
-                    discounts or special offers.
-                </p>
-
-                <p>
-                    Coupons cannot be combined with other promotions, unless otherwise specified.
-                </p>
-
-                <br>
-
-                <p>
-                    These terms and conditions outline the rules and regulations for the use of The Food Sauciety mobile
-                    application.
-                </p>
-
-                <p>
-                    By accessing this mobile application, we assume you accept these terms and conditions. Do not
-                    continue to use The Food Sauciety if you do not agree to all of the terms and conditions stated on
-                    this page.
-                </p>
-
-                <p>
-                    The Food Sauciety mobile application is designed to provide users with access to exclusive food
-                    coupons and discounts from participating restaurants and establishments.
-                </p>
-
-                <p>
-                    Users must be at least 18 years old to use this app or have the permission of a legal guardian.
-                </p>
-
-                <p>
-                    Users are responsible for maintaining the confidentiality of their account and password. Users agree
-                    to accept responsibility for all activities that occur under their account.
-                </p>
-
-                <p>
-                    Coupons and discounts offered through The Food Sauciety are subject to availability and may have
-                    expiration dates and usage restrictions.
-                </p>
-
-                <p>
-                    Users must present valid coupons to participating restaurants at the time of purchase to redeem
-                    discounts or special offers.
-                </p>
-
-                <p>
-                    Coupons cannot be combined with other promotions, unless otherwise specified.
-                </p>
-
-
-            </div>
+        <!-- Rights -->
+        <div>
+            <h2 class="text-xl font-semibold text-gray-900 mb-2">Your Rights</h2>
+            <ul class="list-disc pl-5 space-y-2">
+            <li>Access your data</li>
+            <li>Request correction or deletion</li>
+            <li>Object to processing</li>
+            <li>Request restriction</li>
+            <li>Request data transfer</li>
+            <li>Withdraw consent</li>
+            </ul>
+            <p class="mt-3">
+            Contact: <span class="font-medium">dpo@foodsauciety.com</span>
+            </p>
+        </div>
 
         </div>
+
+    </div>
     </section>
 
     <!-- FAQs Section -->
